@@ -4,6 +4,12 @@ import numpy as np
 import argparse
 import six
 import pickle
+from six.moves.urllib import request
+import os
+
+
+parent = 'https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary/'
+
 
 def read_file(filename):
     """Read data file and make features
@@ -50,7 +56,7 @@ def read_file(filename):
 def make_featuremat(dicts, dim):
     """Make feature matrix for input and output
     Args:
-        dicts, dim: Return of function "read_file"
+        dicts, dim: Returns of function "read_file"
 
     Returns:
         data: feature matrix
@@ -75,18 +81,41 @@ def save_pkl(data, filename):
         six.moves.cPickle.dump(data, output, -1)
     print('Done')
 
- 
+
+def download_dataset(filename):
+    url = parent + filename
+    path = "data/" + filename
+    print 'Downloading %s...' % (filename)
+    request.urlretrieve(url , filename = path)
+    print('Done')
+    print 'Downloading %s...' % (filename + '.t')
+    request.urlretrieve(url + '.t', filename =path + '.t')
+    print('Done')
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Read data file')
     parser.add_argument('--filename', '-f', default="a1a", type=str, help='FILENAME')
     args = parser.parse_args()
     fname = "data/%s" % (args.filename)
 
+    if not os.path.exists(fname):
+        download_dataset(args.filename)
     ans , max_dim = read_file(fname)
     print len(ans)
     print max_dim
     data = make_featuremat(ans, max_dim)
     save_pkl(data, fname)
+
+    fname = fname+'.t'
+    if not os.path.exists(fname):
+        download_dataset(args.filename)
+    ans , max_dim = read_file(fname)
+    print len(ans)
+    print max_dim
+    data = make_featuremat(ans, max_dim)
+    save_pkl(data, fname)
+
 #    print(ans)
 
 """
