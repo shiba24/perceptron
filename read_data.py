@@ -24,6 +24,7 @@ def read_file(filename):
     Features 2darray has the shape of [[dimensions array],[valus array]].
     Be careful this is not direct expression of matrix.
     """
+    print "reading and making pickles..."
     ans = []
     max_dim = 1
     for line in open(filename, 'r'):
@@ -43,8 +44,7 @@ def read_file(filename):
                 fval = float(tempstr[tempstr.find(":") + 1:])
                 f = np.array([[fdim], [fval]])
                 features = np.append(features, f, axis=1)
-                sind = sind + length + 1
-                length = line[sind + 1 + length + 1:].find(" ")
+                sind, length = sind + length + 1, line[sind + length + 2:].find(" ")
             if length < 0:
                 break
 
