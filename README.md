@@ -1,10 +1,39 @@
-This is perceptorn scripts for 2 / 10(MNIST) classes.
+Name
+====
 
-USAGE (binary classification):
+Overview
+This is perceptorn scripts for two / multiple classes.
+
+
+## Description
+
+## Demo
+binary classification:
 	python data_binary.py -f FILENAME
 	python perceptron_binary.py
 
-USAGE (MNIST or multi-class classification):
+multi-class classification:
 	python data_mnist.py -f FILENAME
 	python perceptron_mnist.py
+
+
+## VS. 
+
+## Requirement
+
+## Usage
+
+## Install
+
+## Contribution
+
+## Licence
+
+## Author
+
+[shiba24](https://github.com/shiba24)
+
+
+
+
 
