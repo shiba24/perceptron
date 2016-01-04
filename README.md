@@ -1,27 +1,27 @@
-Name
+Perceptron
 ====
 
-Overview
-This is perceptorn scripts for two / multiple classes.
-
+## Overview
+This is simple perceptorn python scripts for two / multiple classes.
 
 ## Description
+Binary data is [here](https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html).
+Multi-class data os [here](https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multiclass.html).
+In this script, we use [mnist](https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multiclass.html#mnist) dataset for example.
 
-## Demo
-binary classification:
-	python data_binary.py -f FILENAME
-	python perceptron_binary.py
+## Usage
+binary classification
+	data_binary.py -f FILENAME
+	perceptron_binary.py
 
 multi-class classification:
-	python data_mnist.py -f FILENAME
-	python perceptron_mnist.py
+	data_mnist.py -f FILENAME
+	perceptron_mnist.py
 
 
-## VS. 
 
 ## Requirement
 
-## Usage
 
 ## Install
 
