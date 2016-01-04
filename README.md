@@ -5,8 +5,8 @@ Perceptron
 This is simple perceptorn python scripts for two / multiple classes.
 
 ## Description
-Binary data is [here](https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html).
-Multi-class data os [here](https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multiclass.html).
+Binary data : [here](https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html).
+Multi-class data : [here](https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multiclass.html).
 In this script, we use [mnist](https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multiclass.html#mnist) dataset for example.
 
 ## Usage
