@@ -41,13 +41,13 @@ class Perceptron:
         pred_class = np.argmax(pred_val)
         return pred_class
 
-    def w_update(self, x, y, pred_class, alpha=0.0001):
+    def w_update(self, x, y, pred_class, alpha=0.001):
         """Weight update function.
         alpha is learning rate.
         """
         tempw = self.w[pred_class]
-        self.w[y] += np.append(x, 1)
-        self.w[pred_class] -= np.append(x, 1)
+        self.w[y] += alpha * np.append(x, 1)
+        self.w[pred_class] -= alpha * np.append(x, 1)
 
     def train(self, data, iteration):
         """Train function.
@@ -98,7 +98,7 @@ if __name__ == "__main__":
     Perc.train(traindata, 10)
     Perc.test(testdata)
 
-    Perc.test(traindata)
+#    Perc.test(traindata)
 
 
 """
