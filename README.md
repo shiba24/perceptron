@@ -11,8 +11,8 @@ In this script, we use [mnist](https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/da
 
 ## Usage
 binary classification
-	data_binary.py -f FILENAME
-	perceptron_binary.py
+'data_binary.py -f FILENAME
+perceptron_binary.py'
 
 multi-class classification:
 	data_mnist.py -f FILENAME
@@ -23,11 +23,6 @@ multi-class classification:
 ## Requirement
 
 
-## Install
-
-## Contribution
-
-## Licence
 
 ## Author
 
