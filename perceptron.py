@@ -25,8 +25,8 @@ class Perceptron:
 
     """
     def __init__(self, traindata, testdata):
-        self.feature = np.max([len(traindata['x'][0]), len(testdata['x'][0])])
-        self.iniW = np.random.rand(self.feature)
+        self.num_ofdim = np.max([len(traindata['x'][0]), len(testdata['x'][0])])
+        self.iniW = np.random.rand(self.num_ofdim)
         self.iniB = np.random.rand(1)
 
     def set_initial_wb(self):
@@ -39,9 +39,9 @@ class Perceptron:
         """Reshaping input feature matrix, because either train/test data
         does not always have all the features that the other has.
         """
-        if len(data['x'][0]) < self.feature:
+        if len(data['x'][0]) < self.num_ofdim:
             x = data['x']
-            x_plus = np.zeros([len(x), self.feature - len(x[0])])
+            x_plus = np.zeros([len(x), self.num_ofdim - len(x[0])])
             data['x'] = np.append(x, x_plus, axis=1)
         return data
 
